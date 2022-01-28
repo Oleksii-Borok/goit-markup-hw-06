@@ -664,3 +664,11 @@ body {
 .modal-title {
   margin-bottom: 10px;
 }
+
+.input-icon {
+  color: currentColor;
+}
+
+.input-item:hover .input-item:hover {
+  border-color: var(--blue-color);
+}
