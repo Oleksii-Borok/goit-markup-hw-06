@@ -569,6 +569,14 @@ body {
   margin-right: 70px;
 }
 
+/* Contacts */
+
+.contacts-title {
+  color: var(--main-text-color);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 /* -----------------MODAL------------------ */
 
 .backdrop {
@@ -596,8 +604,8 @@ body {
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--transition);
   display: flex;
-  align-items: flex-start;
-
+  flex-direction: column;
+  align-items: center;
   width: 528px;
   height: 581px;
   border-radius: 4px;
@@ -620,4 +628,39 @@ body {
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.7);
+}
+
+.input-item {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.button-send {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  width: 200px;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  border: 0px;
+  border-radius: 4px;
+  padding: 10px 32px 10px 32px;
+  transition: box-shadow var(--transition);
+}
+
+.button-send:hover,
+.button-send:focus {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.textarea {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 16px;
+}
+
+.modal-title {
+  margin-bottom: 10px;
 }
