@@ -490,7 +490,7 @@ body {
 
 .hero-button:hover,
 .hero-button:focus {
-  color: var(--sec-black);
+  color: var(--footer-background);
 }
 
 .portfolio-button {
