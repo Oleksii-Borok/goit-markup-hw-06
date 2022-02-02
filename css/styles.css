@@ -578,10 +578,19 @@ body {
 
 /* Contacts */
 
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.contacts {
+  text-align: center;
+}
+
 .contacts-title {
   color: var(--main-text-color);
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .form-input-footer {
@@ -662,7 +671,7 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 528px;
-  height: 581px;
+  min-height: 581px;
   border-radius: 4px;
   padding: 40px;
 }
@@ -679,6 +688,12 @@ body {
   position: absolute;
   top: 8px;
   right: 8px;
+  transition: fill var(--transition);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--blue-color);
 }
 
 .backdrop.is-hidden .modal {
@@ -700,6 +715,10 @@ body {
   margin-bottom: 12px;
 }
 
+.form {
+  width: 100%;
+}
+
 .form-input {
   width: 100%;
   height: 40px;
@@ -710,11 +729,13 @@ body {
   transition: border-color var(--transition);
 }
 
-.form-input:focus {
+.form-input:focus,
+.form-input:hover {
   border-color: var(--blue-color);
 }
 
-.form-input:focus + .input-icon {
+.form-input:focus + .input-icon,
+.form-input:hover + .input-icon {
   fill: var(--blue-color);
 }
 
@@ -723,11 +744,16 @@ body {
   font-size: 12px;
   line-height: 1.67;
   letter-spacing: 0.01em;
+  margin-bottom: 4px;
   display: block;
 }
 
-.form-field {
+.form-field:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.form-wrapper {
+  margin-bottom: 20px;
 }
 
 .form-text {
@@ -740,7 +766,8 @@ body {
   transition: border-color var(--transition);
 }
 
-.form-field:focus {
+.form-text:hover,
+.form-text:focus {
   border-color: var(--blue-color);
 }
 
@@ -763,6 +790,7 @@ body {
 .check-text {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 30px;
 }
 
@@ -793,14 +821,7 @@ body {
 
 .terms-check:checked + .check-text .check-icon {
   fill: var(--white-color);
-}
 
-/* .terms-check:checked + .check-text::before {
-  border: none;
-  background-image: url(../images/icon-check.svg);
-  background-position: center;
-  background-size: cover;
-} */
 
 .button-submit {
   width: 200px;
