@@ -458,13 +458,55 @@ body {
   overflow: hidden;
 }
 
-/* ---------------------button---------------------- */
+/* --------------------------BUTTONS--------------------------- */
 
+/*---------------------------- general--------------------- */
 .button {
   font-family: inherit;
   cursor: pointer;
   font-weight: 500;
+  font-size: 16px;
 }
+
+/* --------------------- hero / footer/ submit ------------*/
+.main-button {
+  width: 200px;
+  height: 50px;
+  color: var(--white-color);
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 32px;
+  background-color: var(--blue-color);
+  transition: box-shadow var(--transition);
+}
+
+.main-button:hover,
+.main-button:focus {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.button-footer-icon {
+  fill: var(--white-color);
+  margin-left: 10px;
+}
+
+.subscribe-button {
+  padding: 10px 29px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.submit-button {
+  padding: 10px 55px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ----------------------portfolio buttons-------------------- */
 
 .button-list {
   display: flex;
@@ -476,33 +518,13 @@ body {
   margin-right: 8px;
 }
 
-.hero-button {
-  background-color: var(--blue-color);
-  color: var(--white-color);
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  border: 0px;
-  border-radius: 4px;
-  padding: 10px 32px 10px 32px;
-  transition: color var(--transition);
-}
-
-.hero-button:hover,
-.hero-button:focus {
-  color: var(--footer-background);
-}
-
 .portfolio-button {
   background-color: var(--button-color);
   color: var(--sec-black);
-  font-size: 16px;
   line-height: 1.62;
-  letter-spacing: 0.06em;
   text-align: center;
-  letter-spacing: 0.03em;
-  padding: 6px 22px 6px 22px;
-  border: 0px;
+  padding: 6px 22px;
+  border: none;
   border-radius: 4px;
   transition: color var(--transition), background-color var(--transition),
     box-shadow var(--transition);
@@ -514,6 +536,28 @@ body {
   background-color: var(--blue-color);
   color: var(--white-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* ----------------------------modal-close-------------------- */
+
+.button-modal-close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--white-color);
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  transition: fill var(--transition);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--blue-color);
 }
 
 /* ------------------------footer----------------------- */
@@ -593,12 +637,20 @@ body {
   color: var(--main-text-color);
 }
 
+/* --------subscription form---------- */
+
+.footer-form {
+  display: flex;
+  align-items: center;
+}
+
 .form-input-footer {
-  background-color: var(--footer-background);
+  background-color: transparent;
   padding-left: 16px;
   padding-top: 15px;
   padding-bottom: 15px;
   border-radius: 4px;
+  margin-right: 12px;
   width: 358px;
   border-color: var(--input-footer-color);
   color: var(--input-footer-color);
@@ -610,36 +662,11 @@ body {
   border-color: var(--white-color);
 }
 
-.button-footer {
-  width: 200px;
-  height: 50px;
-  font-size: 16px;
-  padding: 10px 29px;
-  background-color: var(--blue-color);
-  color: var(--white-color);
-  border-radius: 4px;
-  margin-left: 12px;
-  border: 0px;
-  display: inline-flex;
-  align-items: center;
-  transition: background-color var(--transition) color var(--transition);
+.footer-cont-item:last-child {
+  margin-left: auto;
 }
 
-.button-footer:hover,
-.button-footer:focus {
-  background-color: var(--button-color);
-  color: var(--blue-color);
-  fill: var(--blue-color);
-}
-
-.button-footer-icon {
-  fill: var(--white-color);
-  margin-left: 10px;
-  fill: currentColor;
-  transition: background-color var(--transition) fill var(--transition);
-}
-
-/* -----------------MODAL------------------ */
+/* --------------------------------MODAL-------------------------- */
 
 .backdrop {
   position: fixed;
@@ -659,6 +686,8 @@ body {
   visibility: hidden;
 }
 
+/*-------------------- main----------------------- */
+
 .modal {
   position: absolute;
   top: 50%;
@@ -676,33 +705,8 @@ body {
   padding: 40px;
 }
 
-.button-modal {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: var(--white-color);
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  transition: fill var(--transition);
-}
-
-.modal-close:hover,
-.modal-close:focus {
-  fill: var(--blue-color);
-}
-
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.7);
-}
-
-.button-send:hover,
-.button-send:focus {
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .modal-title {
@@ -726,12 +730,14 @@ body {
   border-radius: 4px;
   padding-left: 42px;
   outline: none;
-  transition: border-color var(--transition);
+  transition: border var(--transition);
 }
 
 .form-input:focus,
-.form-input:hover {
-  border-color: var(--blue-color);
+.form-input:hover,
+.form-text:hover,
+.form-text:focus {
+  border: 1px solid var(--blue-color);
 }
 
 .form-input:focus + .input-icon,
@@ -752,6 +758,8 @@ body {
   margin-bottom: 10px;
 }
 
+/* ------1st--2nd---3rd inputs---- */
+
 .form-wrapper {
   margin-bottom: 20px;
 }
@@ -763,12 +771,7 @@ body {
   border-radius: 4px;
   padding: 12px 16px;
   resize: none;
-  transition: border-color var(--transition);
-}
-
-.form-text:hover,
-.form-text:focus {
-  border-color: var(--blue-color);
+  transition: border var(--transition);
 }
 
 .form-text::placeholder {
@@ -787,6 +790,8 @@ body {
   position: relative;
 }
 
+/* -------------checkbox------------ */
+
 .check-text {
   display: flex;
   align-items: center;
@@ -794,7 +799,7 @@ body {
   margin-bottom: 30px;
 }
 
-.check-text span {
+.check-custom {
   height: 15px;
   width: 16px;
   border: 2px solid var(--sec-black);
@@ -803,6 +808,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .terms {
@@ -814,34 +820,18 @@ body {
   fill: transparent;
 }
 
-.terms-check:checked + .check-text span {
-  border: none;
+.terms-check:focus + .check-text .check-custom,
+.terms-check:hover + .check-text .check-custom {
+  border: 2px solid var(--blue-color);
+}
+
+.terms-check:checked + .check-text .check-custom,
+.terms-check:checked + .check-text .check-custom {
+  border: 2px solid var(--blue-color);
   background-color: var(--blue-color);
 }
 
-.terms-check:checked + .check-text .check-icon {
+.terms-check:hover + .check-text .check-icon,
+.terms-check:focus + .check-text .check-icon {
   fill: var(--white-color);
-
-
-.button-submit {
-  width: 200px;
-  height: 50px;
-  font-size: 16px;
-  line-height: 1.62;
-  background-color: var(--blue-color);
-  color: var(--white-color);
-  text-align: center;
-  letter-spacing: 0.03em;
-  padding: 6px 22px 6px 22px;
-  border: 0px;
-  border-radius: 4px;
-  transition: color var(--transition), background-color var(--transition),
-    box-shadow var(--transition);
-  box-sizing: border-box;
-  margin-left: 124px;
-}
-
-.button-submit:hover,
-.button-submit:focus {
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
